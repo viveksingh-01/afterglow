@@ -1,4 +1,6 @@
-:root {
+@import "tailwindcss";
+
+/* :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -46,4 +48,4 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+} */
