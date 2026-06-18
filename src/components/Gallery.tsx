@@ -10,7 +10,32 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Gallery() {
   const containerRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {}, { scope: containerRef });
+  useGSAP(
+    () => {
+      const items = gsap.utils.toArray<HTMLElement>(".grid__item");
+
+      items.forEach((item) => {
+        const xTransform = gsap.utils.random(-100, 100);
+
+        gsap.set(item, {
+          transformOrigin: xTransform < 0 ? "0% 50%" : "100% 50%",
+        });
+
+        gsap.to(item, {
+          xPercent: xTransform,
+          ease: "none",
+
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      });
+    },
+    { scope: containerRef },
+  );
 
   return (
     <section ref={containerRef} className="grid grid-cols-8 grid-rows-20 gap-2 overflow-hidden">
