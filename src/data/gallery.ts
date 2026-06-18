@@ -39,7 +39,7 @@ export const galleryData = [
   { id: 38, src: "36.webp", row: 18, col: 4 },
   { id: 39, src: "37.webp", row: 18, col: 7 },
   { id: 40, src: "38.webp", row: 19, col: 2 },
-  { id: 41, src: "39.webp", row: 16, col: 8 },
-  { id: 42, src: "20.webp", row: 20, col: 6 },
-  { id: 43, src: "1.webp", row: 20, col: 3 },
+  { id: 43, src: "10.webp", row: 19, col: 6 },
+  { id: 41, src: "20.webp", row: 20, col: 3 },
+  { id: 42, src: "1.webp", row: 20, col: 7 },
 ];
