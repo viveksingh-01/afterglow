@@ -1,7 +1,10 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis, { type LenisRef } from "lenis/react";
 import { useEffect, useRef } from "react";
 import Gallery from "./components/Gallery";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const lenisRef = useRef<LenisRef>(null);

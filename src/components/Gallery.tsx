@@ -1,11 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { galleryData } from "../data/gallery";
 import Image from "./Image";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
   const containerRef = useRef<HTMLElement>(null);
