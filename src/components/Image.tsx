@@ -8,7 +8,10 @@ type ImageProps = {
 
 const Image: React.FC<ImageProps> = ({ src, row, col }) => {
   return (
-    <div className="grid__item shadow-md col-span-1 row-span-1" style={{ "--r": row, "--c": col } as CSSProperties}>
+    <div
+      className="grid__item shadow-md col-span-1 row-span-1"
+      style={{ gridRow: row, gridColumn: col } as CSSProperties}
+    >
       <img src={`/assets/img/${src}`} />
     </div>
   );
