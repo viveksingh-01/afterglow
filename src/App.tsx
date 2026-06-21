@@ -4,6 +4,7 @@ import ReactLenis, { type LenisRef } from "lenis/react";
 import { useEffect, useRef } from "react";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
+import Hero from "./components/Hero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ function App() {
       <ReactLenis root options={{ autoRaf: true }} ref={lenisRef} />
       <main className="bg-amber-50">
         <Gallery />
+        <Hero />
         <Footer />
       </main>
     </>
