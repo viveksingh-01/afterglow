@@ -45,7 +45,7 @@ export default function Gallery() {
   );
 
   return (
-    <section ref={containerRef} className="grid grid-cols-8 grid-rows-20 gap-2 overflow-hidden">
+    <section ref={containerRef} className="grid grid-cols-3 lg:grid-cols-8 grid-rows-20 gap-2 overflow-hidden">
       {galleryData.map((item) => (
         <Image key={item.id} {...item} />
       ))}
