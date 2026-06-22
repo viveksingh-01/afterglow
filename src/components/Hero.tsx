@@ -8,12 +8,16 @@ const Hero = () => {
   useGSAP(() => {
     if (!titleRef.current) return;
 
+    const footerElement = document.querySelector("footer");
+    if (!footerElement) return;
+
     gsap.to(titleRef.current, {
       opacity: 0,
       ease: "none",
       scrollTrigger: {
-        trigger: titleRef.current,
-        start: "top 60%",
+        trigger: footerElement,
+        start: "top bottom", // Starts when footer enters the bottom
+        end: "top 70%",
         scrub: true,
       },
     });
