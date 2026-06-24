@@ -3,29 +3,35 @@ import gsap from "gsap";
 import { useRef } from "react";
 
 const Hero = () => {
+  const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useGSAP(() => {
-    if (!titleRef.current) return;
+    if (!titleRef.current || !heroRef.current) return;
 
     const footerElement = document.querySelector("footer");
     if (!footerElement) return;
 
     gsap.to(titleRef.current, {
       opacity: 0,
-      ease: "none",
+      scale: 9, // Gives it plenty of room to zoom over the longer scroll distance
+      letterSpacing: "160px",
+      ease: "power1.inOut", // Smooth transition out of the static state
       scrollTrigger: {
-        trigger: footerElement,
-        start: "top bottom", // Starts when footer enters the bottom
-        end: "top 70%",
+        trigger: heroRef.current, // Start tracking based on the Hero section immediately
+        start: "top top", // Starts the moment the user scrolls even 1px
         scrub: true,
-        invalidateOnRefresh: true, // Forces GSAP to recalculate if the page resizes
+        invalidateOnRefresh: true,
       },
     });
   });
+
   return (
-    <section className="pointer-events-none fixed top-0 left-0 flex h-screen w-full items-center justify-center">
-      <h1 ref={titleRef} className="text-5xl font-extralight tracking-[90px] text-amber-300">
+    <section
+      ref={heroRef}
+      className="pointer-events-none fixed top-0 left-0 flex h-screen w-full items-center justify-center"
+    >
+      <h1 ref={titleRef} className="text-5xl font-extralight tracking-[30px] text-amber-300">
         AFTERGLOW
       </h1>
     </section>
