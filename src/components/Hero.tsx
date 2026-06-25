@@ -33,7 +33,11 @@ const Hero = () => {
       ref={heroRef}
       className="pointer-events-none fixed top-0 left-0 flex h-screen w-full items-center justify-center"
     >
-      <h1 ref={titleRef} className="text-5xl font-extralight tracking-[30px] text-amber-300">
+      <h1
+        ref={titleRef}
+        className="text-5xl font-extralight tracking-[30px] text-amber-300 will-change-transform"
+        style={{ transformOrigin: "center center" }}
+      >
         AFTERGLOW
       </h1>
     </section>
