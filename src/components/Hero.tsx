@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="pointer-events-none fixed top-0 left-0 flex h-screen w-full items-center justify-center"
+      className="pointer-events-none fixed top-0 left-0 flex h-screen w-full items-center justify-center overflow-hidden"
     >
       <h1
         ref={titleRef}
